@@ -1,0 +1,8 @@
+#maven
+target/
+
+.idea/*
+*.iml
+
+.DS_Store
+*.log*
