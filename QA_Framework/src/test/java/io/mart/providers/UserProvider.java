@@ -1,7 +1,6 @@
 package io.mart.providers;
 
 import io.mart.util.KeyValueHolder;
-import io.swagger.client.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,7 +8,7 @@ import java.util.List;
 @Service
 public class UserProvider {
 
-    public User buildUser(User dto, List<KeyValueHolder> params){
+    public model.User buildUser(model.User dto, List<KeyValueHolder> params){
         for (KeyValueHolder entry : params){
             String value = entry.getValue();
 

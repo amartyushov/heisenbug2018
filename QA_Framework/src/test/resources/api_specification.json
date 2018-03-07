@@ -1,0 +1,150 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "This is a sample for SUT",
+    "version" : "v1",
+    "title" : "SUT info"
+  },
+  "host" : "localhost",
+  "tags" : [ {
+    "name" : "Users"
+  } ],
+  "schemes" : [ "http", "https" ],
+  "paths" : {
+    "/user" : {
+      "post" : {
+        "tags" : [ "Users" ],
+        "summary" : "Create an user",
+        "description" : "",
+        "operationId" : "createUser",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/User"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/User"
+            }
+          },
+          "201" : {
+            "description" : "Created user"
+          }
+        }
+      }
+    },
+    "/user/{name}" : {
+      "get" : {
+        "tags" : [ "Users" ],
+        "summary" : "Get user by name",
+        "description" : "",
+        "operationId" : "getUserByName",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Found user by given name",
+            "schema" : {
+              "$ref" : "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/users" : {
+      "get" : {
+        "tags" : [ "Users" ],
+        "summary" : "Gets all users",
+        "description" : "",
+        "operationId" : "getAllUsers",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "List of all users",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/User"
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Users" ],
+        "summary" : "Delete all users",
+        "description" : "",
+        "operationId" : "deleteUsers",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "All Users deleted",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Address" : {
+      "type" : "object",
+      "properties" : {
+        "street" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "zip" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "Book" : {
+      "type" : "object",
+      "properties" : {
+        "title" : {
+          "type" : "string"
+        },
+        "author" : {
+          "type" : "string"
+        }
+      }
+    },
+    "User" : {
+      "type" : "object",
+      "properties" : {
+        "address" : {
+          "$ref" : "#/definitions/Address"
+        },
+        "books" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Book"
+          }
+        },
+        "name" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
