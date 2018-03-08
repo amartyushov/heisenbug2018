@@ -1,11 +1,12 @@
-package io.mart.util;
+package io.mart.util.cucumber;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
+import io.mart.util.cucumber.CustomRunner;
 import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class)
+@RunWith(CustomRunner.class)
 @CucumberOptions(
         glue = "io.mart.steps",
         features = "classpath:cucumber",
