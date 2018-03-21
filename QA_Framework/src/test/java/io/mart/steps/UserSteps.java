@@ -19,4 +19,8 @@ public class UserSteps extends AbstractSteps {
     public void userHasName(String name) {
         userChecker.userHasName((User) resultHolder.getResult(), name);
     }
+
+    @Given("^do nothing$")
+    public void doNothing() {
+    }
 }

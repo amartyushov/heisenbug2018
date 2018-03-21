@@ -1,6 +1,7 @@
 package io.mart.steps;
 
 import io.mart.checker.UserChecker;
+import io.mart.executors.CleanUpExecutor;
 import io.mart.executors.UserCreationExecutor;
 import io.mart.providers.UserProvider;
 import io.mart.util.ResultHolder;
@@ -23,5 +24,8 @@ public class AbstractSteps {
 
     @Autowired
     public ScenarioContext scenarioContext;
+
+    @Autowired
+    public CleanUpExecutor cleanUpExecutor;
 
 }

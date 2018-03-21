@@ -10,7 +10,7 @@ public class Hooks extends AbstractSteps{
     @Before("@deleteAll")
     public void deleteAll(){
         log.info("Executing @deleteAll hook");
-        userExecutor.deleteUsers();
+        cleanUpExecutor.deleteAll();
     }
 
     @Before(order = 1)
