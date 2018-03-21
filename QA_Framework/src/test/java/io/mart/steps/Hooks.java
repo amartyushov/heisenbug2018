@@ -18,4 +18,11 @@ public class Hooks extends AbstractSteps{
         log.info("Saving context of scenario");
         scenarioContext.init(scenario);
     }
+
+    @Before(order = 2)
+    public void checkingHealth(){
+        log.info("Checking health of required services");
+        healthChecker.checkMicroserviceStatuses(
+                scenarioContext.getTags());
+    }
 }

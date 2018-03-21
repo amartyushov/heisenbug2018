@@ -1,5 +1,6 @@
 package io.mart.steps;
 
+import io.mart.checker.HealthChecker;
 import io.mart.checker.UserChecker;
 import io.mart.executors.UserCreationExecutor;
 import io.mart.providers.UserProvider;
@@ -23,5 +24,8 @@ public class AbstractSteps {
 
     @Autowired
     public ScenarioContext scenarioContext;
+
+    @Autowired
+    public HealthChecker healthChecker;
 
 }
