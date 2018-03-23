@@ -6,4 +6,10 @@ Feature: create user
     Given create user with params
       | key  | value |
       | name | Alex  |
+    Then user has name "Alexs"
+
+  Scenario: check user is not null 1
+    Given create user with params
+      | key  | value |
+      | name | Alex  |
     Then user has name "Alex"
